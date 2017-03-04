@@ -1,0 +1,17 @@
+function SaveMethodNameToRegisterM()
+  execute "normal [[kf l\"myiw"
+  execute "normal \<C-o>"
+  endfunction
+function MakeLog(logLevel)
+  let l:log = "SYSLOG(" . a:logLevel . ") << \"jj\"mpa::\" << __func__ << \",\" << ENDLOG;"
+  return l:log
+  endfunction
+function Log(logLevel)
+  call SaveMethodNameToRegisterM()
+  let l:line = MakeLog(a:logLevel)
+  execute "normal o" . l:line . "jjF,"
+  endfunction
+nmap <silent> @li :call Log("LOG_INFO")<CR>
+nmap <silent> @le :call Log("LOG_ERR")<CR>
+nmap <silent> @lc :call Log("LOG_CRIT")<CR>
+

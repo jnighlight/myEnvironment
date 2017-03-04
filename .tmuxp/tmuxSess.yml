@@ -1,0 +1,12 @@
+session_name: 4-pane-split
+windows:
+    - window_name: dev window
+      layout: tiled
+      shell_command_before:
+          - rg
+      panes:
+          - shell_command:
+              - ls -al
+          - echo second pane
+          - echo third pane
+          - echo fourth pane

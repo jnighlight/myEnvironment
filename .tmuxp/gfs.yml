@@ -1,0 +1,11 @@
+session_name: 'gfs'
+windows:
+- focus: 'true'
+  layout: 46a5,238x59,0,0{119x59,0,0[119x29,0,0,161,119x29,0,30,163],118x59,120,0,162}
+  options: {}
+  panes:
+  - config
+  - log | grep gfs
+  - pane
+  start_directory: /home/vagrant
+  window_name: bash

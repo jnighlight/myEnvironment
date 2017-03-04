@@ -1,0 +1,20 @@
+session_name: '0'
+windows:
+- focus: 'true'
+  layout: 262f,238x58,0,0{119x58,0,0,2,118x58,120,0[118x28,120,0,14,118x29,120,29,31]}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: cd /usr/local/projects/raingauge/src
+  - cd /usr/local/projects/raingauge/src
+  - cd /usr/local/projects/raingauge
+  window_name: vagrant@localhost:/usr/local/projects/raingauge/src
+- layout: 69f5,238x58,0,0{119x58,0,0,33,118x58,120,0,34}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - pane
+  - pane
+  start_directory: /usr/local/projects/common/lib/json
+  window_name: vagrant@localhost:/usr/local/projects/common/lib/json
