@@ -1,0 +1,28 @@
+set nocompatible
+
+set expandtab
+
+set bs=indent,eol,start
+set ai
+set ts=4
+set sw=4
+set et
+set hlsearch
+set ignorecase
+set smartcase
+set nowrap
+
+syntax enable
+
+"Cheating in windows copy shortcut
+vmap <C-c> "+y
+inoremap jj <Esc>
+"vsvim shunts us out of insert mode if we're just kidding...:v
+inoremap jk <Esc>
+
+let @r = 'viw"0p'
+let @p = 'vi("0p'
+
+"We have 2 mappings here. If VisualAssist is installed, it'll overwrite. Else we'll use the native one
+map gi :vsc Edit.GoToImplementation<CR>
+map gi :vsc VAssistX.GoToImplementation<CR>
