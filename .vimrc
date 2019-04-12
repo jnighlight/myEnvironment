@@ -6,6 +6,8 @@ set ts=4                        "Tab == 4 spaces
 set sw=4
 set et
 set viminfo='50,<600,s50        "VimInfo stats for undo's and stuff
+set tw=0                        "We _never_ want text to auto-wrap
+set nowrap                      "Also don't want text to wrap in our window. A line's a line
 
 set hlsearch                    "In case this isn't set by default, highlight search words
 set showcmd                     "Wanting to see leader and other commands in vim
@@ -36,19 +38,21 @@ let @r = 'viw"0p'
 let @p = 'vi("0p'
 let @c = "f,a\<cr>jjf,a\<cr>jjf,a\<cr>jjf,a\<cr>jj"
 
-"To get colors in vim airline while running tmux line
-set t_Co=256                    "I was told this helped at some point
-set termguicolors               "Honestly not 100% sure what this does...
+set wildmenu                    "Suggested by one jjumalon. Autocomplete :commands w/tab
+set wildmode=list:longest,full  "Formatting options for wildmenu
 
 let g:netrw_liststyle=3         "Vim file explorer (netrw) file layout"
 
 if has("gui_running")           "If we're running gvim
+    set guioptions-=T           "Removes the toolsbar in gvim
+
     "colorscheme slate          "And use a lazy, prepacked color scheme
     colorscheme solarized       "Solarized is good, may swap it out at some point
     set background=dark         "Solarized background, dark themes are best themes
-    set guifont=consolas        "Use visual studio's default font
+    set guifont=consolas:cANSI:qDRAFT        "Use visual studio's default font. Additions suggested from a friend
 endif
 
+set encoding=utf-8              "Forces us to utf-8. Also fixes HackerNews plugin. That's...annoying
 
 "------------START OF PLUGINS------------
 "set the runtime path to include Vundle and initialize
